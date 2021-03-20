@@ -26,7 +26,10 @@ class UTC{
   explicit UTC() : u(new __S_UTC){  };
   explicit UTC(unsigned int year,
 	       unsigned int mon,
-	       unsigned int day) : u(new __S_UTC{year,mon,day}){  };
+	       unsigned int day,
+	       unsigned int hour=0,
+	       unsigned int min =0,
+	       unsigned int sec =0) : u(new __S_UTC{year,mon,day,hour,min,sec}){  };
   UTC(const UTC& other){
     initialize(other);
   }
@@ -54,7 +57,7 @@ class UTC{
     time_t now =time(0);
     char* data = ctime(&now);
     tm* gm =gmtime(&now);
-    setUTC(gm->tm_year+1900,gm->tm_mon+1,gm->tm_mday);
+    setUTC(gm->tm_year+1900,gm->tm_mon+1,gm->tm_mday,gm->tm_hour,gm->tm_min,gm->tm_sec);
   };
   void setUTC( unsigned int year,
 	       unsigned int mon,
