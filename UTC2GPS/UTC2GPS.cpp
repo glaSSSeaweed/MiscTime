@@ -1,5 +1,4 @@
 #include "date/tz.h"
-#include <cstdint>
 #include <iostream>
 #include <string>
 using namespace date;
