@@ -5,7 +5,7 @@
 using namespace std::chrono_literals;
 using namespace std::chrono;
 using namespace date;
-using dh = std::chrono::duration<double, std::ratio<84600>>;
+using dh = std::chrono::duration<double, std::ratio<86400>>;
 
 constexpr auto jdiff() {
   return duration_cast<dh>(sys_days{jan / 1 / 1970} -
